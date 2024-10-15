@@ -7,7 +7,7 @@ beforeEach(() => {
     jest.resetAllMocks();
 });
 test('should call getLevel', () => {
-    fetchData.mockReturnValue(Error());
+    fetchData.mockReturnValue('https://server/user/${userId}');
     getLevel(1);
     expect(fetchData).toBeCalledWith('https://server/user/1')
 })
