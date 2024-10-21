@@ -4,7 +4,6 @@
 
 
 Домашнее задание к лекции «Unit-тестирование»
-
 Задача 3. Mocking (задача со звёздочкой)
 
 Легенда
@@ -13,28 +12,19 @@
 
 Описание
 // Демо-реализация функции fetchData (модуль http):
-
 export default function fetchData(url) {
-
   throw new Error('Mock this!');
 }
 
 // Ваша функция:
-
 import fetchData from './http';
 
-
 export function getLevel(userId) {
-
   const response = fetchData(`https://server/user/${userId}`);
-  
-  // TODO: логика обработки
-
+    // TODO: логика обработки
   if (response.status === 'ok') {
-
      return `Ваш текущий уровень: ${response.level}`; 
   }
-  
   return `Информация об уровне временно недоступна`;
 }
 
