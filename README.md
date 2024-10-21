@@ -1,32 +1,32 @@
-#CI Test demo
+# CI Test demo
 
 [![Build status](https://ci.appveyor.com/api/projects/status/80x19218o9p3qrfk?svg=true)](https://ci.appveyor.com/project/Natasha01013/hw4-task3-mock)
 
 
-Домашнее задание к лекции «Unit-тестирование»
-Задача 3. Mocking (задача со звёздочкой)
+# Домашнее задание к лекции «Unit-тестирование»   
+## Задача 3. Mocking (задача со звёздочкой)
 
 Легенда
 
 Вы написали функцию, которая взаимодействует с функцией fetchData (достаточно тяжёлой, т.к. взаимодействует с удалённым веб-сервером). Вы хотите протестировать свою функцию (в том числе на то, как она обрабатывает ошибки) и, чтобы «отвязаться» от этой тяжёлой зависимости, решили использовать механизм «mocking'а».
 
-Описание
-// Демо-реализация функции fetchData (модуль http):
-export default function fetchData(url) {
-  throw new Error('Mock this!');
+Описание   
+// Демо-реализация функции fetchData (модуль http):   
+export default function fetchData(url) {   
+  throw new Error('Mock this!');   
 }
 
-// Ваша функция:
+// Ваша функция:   
 import fetchData from './http';
 
-export function getLevel(userId) {
-  const response = fetchData(`https://server/user/${userId}`);
-    // TODO: логика обработки
-  if (response.status === 'ok') {
-     return `Ваш текущий уровень: ${response.level}`; 
-  }
-  return `Информация об уровне временно недоступна`;
-}
+export function getLevel(userId) {   
+  const response = fetchData(`https://server/user/${userId}`);   
+    // TODO: логика обработки   
+  if (response.status === 'ok') {   
+     return `Ваш текущий уровень: ${response.level}`;    
+  }   
+  return `Информация об уровне временно недоступна`;   
+}   
 
 Сделайте моки для функции fetchData и напишите тесты таким образом, чтобы обеспечить 100% покрытие тестами функции getLevel по строкам.
 
