@@ -1,3 +1,3 @@
 export default function fetchData(url) {
-   throw new Error('Mock this!');
+   throw new Error(`${url} не работает, это Mock`);
   }

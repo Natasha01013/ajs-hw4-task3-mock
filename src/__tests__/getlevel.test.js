@@ -4,7 +4,7 @@ import {getLevel} from '../getlevel';
 jest.mock('../http');
 
 beforeEach(() => {
-    jest.resetAllMocks();
+    jest.clearAllMocks(); // Очищаем моки перед каждым тестом
 });
 
 //тесты для функции getLevel
@@ -26,7 +26,10 @@ test('return error if unknown', () => {
     expect(result).toBe('Информация об уровне временно недоступна');
 });
 
-//тест для функции fetchData (для 100% покрытия тестами)
-test('must throw an error when calling', () => {
-    expect(() => fetchData('https://server/user/1')).toThrow('Mock this!');
-});
+test('should handle when fetchData throws an error', () => {
+    fetchData.mockImplementation(() => {
+      throw new Error('https://server/user/1 не работает, это Mock');
+    });
+
+    expect(() => getLevel(1)).toThrow('https://server/user/1 не работает, это Mock');
+  });

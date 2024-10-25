@@ -1,6 +1,6 @@
 # CI Test demo
 
-[![Build status](https://ci.appveyor.com/api/projects/status/80x19218o9p3qrfk?svg=true)](https://ci.appveyor.com/project/Natasha01013/hw4-task3-mock)
+[![Build status](https://ci.appveyor.com/api/projects/status/sid0xlmssjl36jqq?svg=true)](https://ci.appveyor.com/project/Natasha01013/ajs-hw4-task3-mock)
 
 
 # Домашнее задание к лекции «Unit-тестирование»   
